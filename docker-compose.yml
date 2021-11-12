@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    docker-jenkins:
+      image: docker-jenkins:0.1
+      container_name: docker-jenkins
+      #restart: always
+      ports:
+       - 9090:8080
+       - 9091:50000
+      volumes:
+       - ./jenkins_home:/var/jenkins_home
+       - ./repo:/var/repo
+       - ./settings.xml:/usr/share/maven/conf/settings.xml
